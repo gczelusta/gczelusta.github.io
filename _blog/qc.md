@@ -5,71 +5,49 @@ title: Komputery kwantowe
 
 Komputery kwantowe nie są po prostu kolejnym krokiem w rozwoju obecnych komputerów. Są zupełnie nowym podejściem, które czasami jest lepsze a czasami gorsze od klasycznego.
 
-Wyobraźmy sobie jakiś obiekt fizyczny, który może przyjmować dwa różne
+Zacznijmy od tego, czym jest kubit. Bo to właśnie z kubitów składa się procesor kwantowy. Wyobraźmy sobie jakiś obiekt fizyczny, który może przyjmować dwa różne
 stany. Na przykład może to być:
 
 -   cząstka mogącą znajdować się w jednym z dwóch położeń, po lewej lub
     po prawej
 
-    <!-- [0.45]{} ![image](/assets/images/blog/czastka_x1.png) -->
-    <img src="/assets/images/blog/czastka_x1.png" width=300>
-    <img src="/assets/images/blog/czastka_x2.png" width=300>
-
-
-    <!-- [0.45]{} ![image](/assets/images/blog/czastka_x2.png) -->
+    ![image](/assets/images/blog/czastka_x1.png) | ![image](/assets/images/blog/czastka_x2.png)
 
 -   cząstka, która może poruszać się w lewo lub w prawo
 
-    [0.45]{} ![image](/assets/images/blog/czastka_v1.png)
-
-    [0.45]{} ![image](/assets/images/blog/czastka_v2.png)
+    ![image](/assets/images/blog/czastka_v1.png) | ![image](/assets/images/blog/czastka_v2.png)
 
 -   atom wodoru z elektronem na pierwszej lub drugiej powłoce
 
-    [0.45]{} ![image](/assets/images/blog/atom1.png)
-
-    [0.45]{} ![image](/assets/images/blog/atom2.png)
+    ![image](/assets/images/blog/atom1.png) | ![image](/assets/images/blog/atom2.png)
 
 -   fala drgająca w pionie lub poziomie
 
-    [0.45]{} ![image](/assets/images/blog/fala1.png)
-
-    [0.45]{} ![image](/assets/images/blog/fala2.png)
+    ![image](/assets/images/blog/fala1.png) | ![image](/assets/images/blog/fala2.png)
 
 -   foton padający na półprzepuszczalne lustro, który może się odbić lub
     nie
 
-    [0.45]{} ![image](/assets/images/blog/plytka1.png)
-
-    [0.45]{} ![image](/assets/images/blog/plytka2.png)
+    ![image](/assets/images/blog/plytka1.png) | ![image](/assets/images/blog/plytka2.png)
 
 Niezależnie od konkretnej fizycznej realizacji każdego z tych układów
 możemy jego dwa stany oznaczyć w następujący sposób: 
-$$\begin{cases}
-    \text{pierwszy stan:} &|0\rangle\; \text{np.:}\;
-        |\includegraphics[scale=0.01, valign=c]{czastka_x1.png}\rangle,\;
-        |\includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle,\;
-                    |\includegraphics[scale=0.01, valign=c]{atom1.png}\rangle,\;
-                    |\includegraphics[scale=0.05, valign=c]{fala1.png}\rangle,\;
-                    |\includegraphics[scale=0.05, valign=c]{plytka1.png}\rangle \\
-            \text{drugi stan:} &|1\rangle\; \text{np.:}\;
-                    |\includegraphics[scale=0.01, valign=c]{czastka_x2.png}\rangle,\;
-                    |\includegraphics[scale=0.1, valign=c]{czastka_v2.png}\rangle,\;
-                    |\includegraphics[scale=0.01, valign=c]{atom2.png}\rangle,\;
-                    |\includegraphics[scale=0.05, valign=c]{fala2.png}\rangle,\;
-                    |\includegraphics[scale=0.05, valign=c]{plytka2.png}\rangle \\
-        \end{cases}$$ Są to tylko oznaczenia nawiązujące do bitów,
-równie dobrze można by nazwać te stany inaczej: $$\begin{cases}
-            |\uparrow\rangle\\
-            |\downarrow\rangle\\
-        \end{cases}$$ W klasycznej fizyce, czyli opisującej świat w
+
+|pierwszy stan| $$\|0\rangle$$ |![](/assets/images/blog/czastka_v1.png)|![](/assets/images/blog/atom1.png)|![](/assets/images/blog/fala1.png)|![](/assets/images/blog/plytka1.png)|
+|drugi stan| $$\|1\rangle$$ |![](/assets/images/blog/czastka_v2.png)|![](/assets/images/blog/atom2.png)|![](/assets/images/blog/fala2.png)|![](/assets/images/blog/plytka2.png)|
+
+Są to tylko oznaczenia nawiązujące do bitów,
+równie dobrze można by nazwać te stany inaczej: $\|\uparrow\rangle\, |\downarrow\rangle$ W klasycznej fizyce, czyli opisującej świat w
 skalach jakie widzimy na codzień, tego typu układy mogłyby występować
 jedynie w jednym z tych dwóch stanów, albo $|0\rangle$ albo $|1\rangle$.
 Jednak w fizyce kwantowej, opisującej świat na fundamentalnym poziomie,
 w małych skalach, układ może być w stanie *superpozycji*, tzn. być
 kombinacją tych dwóch stanów:
+
 $$|\psi\rangle = \alpha|0\rangle+\beta|1\rangle
-        \label{eq:superpozycja}$$ przez $|\psi\rangle$ oznaczyliśmy
+        \label{eq:superpozycja}$$
+        
+przez $|\psi\rangle$ oznaczyliśmy
 tutaj ogólnie pewien stan układu, natomist $\alpha$ i $\beta$ są
 liczbami, w ogólności zespolonymi, określają one na ile stan
 $|\psi\rangle$ jest bliski stanowi $|0\rangle$, a na ile stanowi
@@ -77,11 +55,10 @@ $|1\rangle$.
 
 Spójrzmy na przykład, weźmy foton padający na półprzepuszczalne lustro,
 foton ten może się odbić lub przez nie przelecieć. Stan fotonu po
-interakcji z takim lustrem będzie zadany właśnie wzorem
-(\[eq:superpozycja\]), tzn. będzie superpozycją fotonu który odbił się i
+interakcji z takim lustrem będzie zadany właśnie powyższym wzorem, tzn. będzie superpozycją fotonu który odbił się i
 fotonu który przeszedł. Uwaga, nie oznacza to że foton w jakiś sposób
 sie dzieli i trochę go się odbija a trochę przechodzi. Oznacza to, że
-foton w stanie (\[eq:superpozycja\]) będzie zachowywał się ,,jakby był”
+foton będzie zachowywał się ,,jakby był”
 w dwóch miejscach jednocześnie. Taki stan fotonu jest czymś
 nieituicyjnym dla nas ponieważ nie ma odpowiednika w naszej
 codzienności, jednak stan kwantowy nie jest czymś co obserwujemy
@@ -407,11 +384,3 @@ Następnie można tam tworzyć algorytmy kwantowe (reprezentowane przez
 obwody kwantowe, które poznaliśmy) i je uruchamiać. Można to robić
 korzystając z graficznego kompozytora lub programujac w Pythonie za
 pomocą biblioteki https://qiskit.org/
-
-Badaniami nad informatyką kwantową zajmują sie naukowcy m.in. w m.in. w
-Zakładzie Optyki Atomowej i w Zakładzie Teorii Układów Złożonych FAIS
-UJ.
-
-https://chaos.if.uj.edu.pl/ZOA/index.php
-
-http://cs.if.uj.edu.pl/cs/department.html

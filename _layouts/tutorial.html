@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="baner">
+    <img src="/assets/images/tutorials/{{ page.name }}.png" alt="">
+</div>
+
+<h2>{{ page.title }}</h2>
+<p class="level">
+    Poziom:
+    {% for i in (0..page.level) %}
+        &#9679;
+    {% endfor %}
+    {% for i in (page.level..1) %}
+        &#9675;
+    {% endfor %}
+</p>
+
+{% for tag in page.tags %}
+    <a href="/{{ tag }}.html" class="tags">| {{ tag }}</a>
+{% endfor %}
+
+{{ content }}

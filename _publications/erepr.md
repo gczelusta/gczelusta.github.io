@@ -15,7 +15,7 @@ Aby dokonać teleportacji niezbędne jest splątanie kwantowe. Jest to szczegól
 
 <div class="read-more">
     <p>
-        Więcej o splątaniu przeczytasz w poście <a href="/blog/entanglement.html">Splątanie kwantowe</a>
+        Więcej o splątaniu przeczytasz w poście dotyczącym komputerów kwantowych <a href="/blog/qc.html">Komputery kwantowe</a>
     </p>
 </div>
 
@@ -24,7 +24,7 @@ Samo splątanie jednak nie wystarczy. Ponieważ nie można przekazywać informac
 
 <div class="read-more">
     <p>
-        Więcej o teleportacji przeczytasz w poście <a href="/blog/teleportation.html">Kwantowa telepotacja</a>
+        Więcej o teleportacji przeczytasz w poście <a href="/blog/teleport.html">Kwantowa teleportacja</a>
     </p>
 </div>
 

@@ -1,11 +1,11 @@
 ---
 name: bigbang
 title: Wielki (Nie)Wybuch
-tags: OTW Kosmologia Filozofia
+# tags: OTW Kosmologia Filozofia
 level: 0
 ---
 
-Wszechświat powstał w wyniku Wielkiego Wybuchu? Nie do końca. O co zatem chodzi z tym Wielkim Bum, bo tak należałoby dokładnie przetłumaczyć angielskie określenie Big Bang?
+Wszechświat powstał w wyniku Wielkiego Wybuchu? Nie do końca. O co zatem chodzi z tym Wielkim Hukiem, bo tak należałoby dosłownie przetłumaczyć angielskie określenie Big Bang?
 
 Na tyle na ile dzisiaj wiemy, w przyrodzie istnieją tylko cztery oddziaływania fundamentalne: silne, słabe, elektromagnetyczne i grawitacyjne. Oddziaływania silne i słabe to nazwy pewnych oddziałań, nie przymiotniki. Oznacza to, że materia może oddziaływać ze sobą tylko na te cztery sposoby. Oddziaływania silne i słabe są krótkozasięgowe, bardzo krótkozasięgowe w związku z tym działają jedynie na poziomie cząstek elementarnych i w życiu codziennym ich bezpośrednio nie obserwujemy, chociaż oczywiście gdyby nie działały na cząstki, ani my, ani świat w takiej postaci jaką ma, byśmy nie istnieli. Oddziaływanie elektromagnetyczne obserwujemy w życiu codziennym i to w zasadzie tylko ono gra istotną rolę dla nas. Bo to dzięki niemu atomy tworzą cząsteczki a więc całą materię wokół nas i nas samych oczywiście też. To dzięki nim szklanka postawiona na stole nie przelatuje przez niego, a woda nalana do niej nie przecieka przez jej ścianki. Ostatnie z oddziaływań, grawitacyjne, odgrywa w naszym codziennym otoczeniu mniejszą rolę, co prawda dzięki niemu chodzimy po Ziemi i po podskoczeniu nie odlatujemy w kosmos ale poza tym przyciąganie grawitacyjne nie jest istotne w oddziaływaniu obiektów w naszym otoczeniu.
 
@@ -19,15 +19,15 @@ Masa (lub energia) poruszają się tak aby dopasować sie do kształtu czasoprze
 
 $$R_{\mu\nu}+\frac{1}{2}Rg_{\mu\nu}=8\pi T_{\mu\nu}$$
 
-jest to tzw. równanie Einsteina. Nie martwmy się znaczkami za pomocą, których jest zapisane, za chwilę je rozszyfrujemy. Istotne jest to, że wyraża ono dokładnie to samo co wcześniej zapisaliśmy słowami. Lewa strona opisuje kształt czasoprzestrzeni a prawa rozkłąd masy lub energii.
+jest to tzw. równanie Einsteina. Nie martwmy się znaczkami, za pomocą, których jest zapisane, za chwilę je rozszyfrujemy. Istotne jest to, że wyraża ono dokładnie to samo co wcześniej zapisaliśmy słowami. Lewa strona opisuje kształt czasoprzestrzeni a prawa rozkład masy lub energii. Zarówno masa jak i energia mogą oddziaływać grawitacyjnie, co jest zawarte w słynnym $E=mc^2$
 
-wyjaśnienie matematycznych obiektów używanych w OTW zacznijmy od $g_{\mu\nu}$. Nazywamy je metryką, mówi ono o tym jak mierzy się odległości w danej przestrzenii. Spójrzmy na przykład dla płaskiej przestrzenii dwuwymiarowej. Wprowadzamy układ współrzędnych $xy$ i rysujemy mały odcinek o długości $ds$. Literkę $d$ przed różnymi symbolami możemy rozumieć jako bardzo małą część czegoś. Ma ona również precyzyjne matematyczne sformułowanie ale nie będzie nam potrzebne. Jak możemy wyrazić długość $ds$ za pomocą współrzędnych? Możemy skorzystać z tw. Pitagorasa. Odcnikowi $ds$ odpowiada, krótki odcinek na osi $X$ o długości $dx$ oraz podobnie na osi $Y$ odcninek $dy$, mamy zatem:
+Wyjaśnienie matematycznych obiektów używanych w OTW zacznijmy od $g_{\mu\nu}$. Nazywamy je metryką, mówi ono o tym jak mierzy się odległości w danej przestrzenii. Spójrzmy na przykład dla płaskiej przestrzenii dwuwymiarowej. Wprowadzamy układ współrzędnych $xy$ i rysujemy mały odcinek o długości $ds$. Literkę $d$ przed różnymi symbolami możemy rozumieć jako bardzo małą część czegoś. Ma ona również precyzyjne matematyczne sformułowanie ale nie będzie nam potrzebne. Jak możemy wyrazić długość $ds$ za pomocą współrzędnych? Możemy skorzystać z tw. Pitagorasa. Odcnikowi $ds$ odpowiada, krótki odcinek na osi $X$ o długości $dx$ oraz podobnie na osi $Y$ odcninek $dy$, mamy zatem:
 
 $$ds^2=dx^2+dy^2$$
 
 ![Metric](\assets\videos\blog\metric.gif)
 
-Jaki ma to związek z $g_{\mu\nu}$? Otóż indeksy $\mu$ oraz $\nu$ przyjmują wartości współrzędnych przestrzeni, którą opsiujemy. W naszym przypadkiu mamy dwie współrzędne $x$ oraz $y$. Czyli tensor $g_{\mu\nu}$ ma następujące składowe $g_{xx}$, $g_{xy}$, $g_{yx}$ oraz $g_{yy}$ a ich wartości można odczytać z wyrażenia na $ds$, odnoszą się one do współczynników stojących przy odpowiednich wyrazach:
+Jaki ma to związek z $g_{\mu\nu}$? Otóż indeksy $\mu$ oraz $\nu$ przyjmują wartości współrzędnych przestrzeni, którą opsiujemy. W naszym przypadku mamy dwie współrzędne $x$ oraz $y$. Czyli tensor $g_{\mu\nu}$ ma następujące składowe $g_{xx}$, $g_{xy}$, $g_{yx}$ oraz $g_{yy}$ a ich wartości można odczytać z wyrażenia na $ds$, odnoszą się one do współczynników stojących przy odpowiednich wyrazach:
 
 $$ds^2=g_{xx}dx^2+g_{xy}dxdy+g_{yx}dydx+g_{yy}dy^2$$
 
@@ -77,7 +77,7 @@ Obiekty $R_{\mu\nu}$ (tensor Ricciego) oraz $R$ (skalar Ricciego), które też p
 
 Została nam jeszcze prawa strona równania Einsteina. Widzimy tam stałą grawitacji $G$ oraz tzw. tensor energii-pędu $T_{\mu\nu}$, który opisuje rozkład masy (energii) w przestrzenii, jego konkretną formę zobaczymy później.
 
-Chcemy zobaczyć gdzie w równaniach Einsteina ukryty jest Wielki Wybuch. Rówanania Einsteina są dość ogólne. Kiedy chcemy policzyć coś w konkretnej stuacji musimy zapisać te równanie dla tej konkretenj sytuacji. Aby zastanwiać się nad początkiem Wszechświata musimy spróbować zapisać równania Einsteina dla Wszechświata jako całości. W takim ujęciu nie interesują nas szczegóły budowy Wszechświata a jedynie jego ogólny kształt. Najczęściej się przyjmuje, że Wszechświat w dużej skali jest jednorodny i izotropowy. Co to znaczy? Jednorodny tzn. że jest taki sam w każdym miejscu, a izotropowy tzn. że jest takim sam w każdym kierunku. Nie wiemy czy tak jest na pewno, bo nie widzieliśmy całego Wszechświata, ale mamy poszlaki obserwacyjne o tym świadczące. Przy taki założeniu okazuje się, że istnieją tylko trzy możliwe $g_{\mu\nu}$, które mogłyby opisywać czasoprzestrzeń takiego Wszechświata.
+Chcemy zobaczyć gdzie w równaniach Einsteina ukryty jest Wielki Wybuch. Rówanania Einsteina są dość ogólne. Kiedy chcemy policzyć coś w konkretnej stuacji musimy zapisać te równanie dla tej konkretnej sytuacji. Aby zastanwiać się nad początkiem Wszechświata musimy spróbować zapisać równania Einsteina dla Wszechświata jako całości. W takim ujęciu nie interesują nas szczegóły budowy Wszechświata a jedynie jego ogólny kształt. Najczęściej się przyjmuje, że Wszechświat w dużej skali jest jednorodny i izotropowy. Co to znaczy? Jednorodny tzn. że jest taki sam w każdym miejscu, a izotropowy tzn. że jest takim sam w każdym kierunku. Nie wiemy czy tak jest na pewno, bo nie widzieliśmy całego Wszechświata, ale mamy poszlaki obserwacyjne o tym świadczące. Przy takim założeniu okazuje się, że istnieją tylko trzy możliwe $g_{\mu\nu}$, które mogłyby opisywać czasoprzestrzeń takiego Wszechświata.
 
 $$ds^2=-dt^2+a^2\left(t\right)\left(\frac{dr^2}{1-kr^2}+r^2d\theta^2+r^2\sin^2\theta d\phi^2\right)$$
 
@@ -107,7 +107,7 @@ Wniosek ten wynika jedynie z założenia, że Wszechświat jest jednorodny i izo
 
 Rozkład materii we Wszechświecie jest oczywiście dość złożony, a poza tym nie znamy go w pełni. Jednak, zauważmy, że patrząc w skali Wszechświata nawet galaktyki czy ich skupiska są jedynie drobnymi pyłkami swobodnie unoszącymi się w ogomnej przestenni. Możemy przyjąć w przybliżeniu, że Wszechświat jest wypełniony pyłem. Ponieważ wcześniej założyliśmy, że jest jednorodny i izotropowy to znaczy, że teraz musimy przyjąć, że pył ten jest równomiernie rozłożony we Wszechświecie.
 
-Dla pyłu tensor energii-pedu ma bardzo prostą postać
+Dla pyłu tensor energii-pędu ma bardzo prostą postać
 $$T_{\mu\nu}=\left(\begin{array}{cc}
 	\rho&0&0&0\\
 	0&0&0&0\\
@@ -131,12 +131,12 @@ $$a(0)=0$$
 
 Przypomnijmy sobie, że $a$ mnoży część przestrzenną metryki, czyli wygląda na to, że istnieje jakaś chwila "zero" w której Wszechświat miał zerową objętość a później zaczął się rozszerzać. Mamy Wielki Wybuch!
 
-Zastanówmy się jednak co nas doprowadziło do wyniku z Wielkim Wybuchem. Po pierwsze przyjęliśmy, że poprawną teorią opisującą grawitację jest OTW. A czy na pewno? OTW działa dość dobrze dla obiektów, które obserwujemy. Jednak prawie na pewno w sytuacjach bardzo skrajnych, czyli takich kiedy mamy do czynienia z bardzo dużymi energiami lub bardzo małymi odległościami OTW nie będzie działać poprawnie. Do opisu takich sytuacji potrzebujemy teorii kwantowej grawitacji. A początek Wszechświata niewątpliwie był skrajną sytuacją. Innymi słowy nie można naiwnie przedłużać wykresu $a(t)$ dowolnie daleko w przeszłość.
+Zastanówmy się jednak co nas doprowadziło do wyniku z Wielkim Wybuchem. Po pierwsze przyjęliśmy, że poprawną teorią opisującą grawitację jest OTW. A czy na pewno? OTW działa dobrze dla obiektów, które obserwujemy. Jednak prawie na pewno w sytuacjach bardzo skrajnych, czyli takich kiedy mamy do czynienia z bardzo dużymi energiami lub bardzo małymi odległościami, OTW nie będzie działać poprawnie. Do opisu takich sytuacji potrzebujemy teorii kwantowej grawitacji. A początek Wszechświata niewątpliwie był skrajną sytuacją. Innymi słowy nie można naiwnie przedłużać wykresu $a(t)$ dowolnie daleko w przeszłość.
 
 <div class="read-more">
     <p>
-        Więcej o kwantowej grawitacji przeczytasz w poście <a href="/blog/qg.html">Kwantowa grawitacja</a>
+        Więcej o kwantowej grawitacji przeczytasz w poście dotyczącym jednej z proponowanych teorii kwantowej grawitacji jaką jest <a href="/blog/lqg.html">Pętlowa grawitacja kwantowa</a>
     </p>
 </div>
 
-Bardziej zaawansowane modele kosmologiczne oraz obserwacje potwierdzają, że Wszechświat był w przeszłości bardzo mały i bardzo gorący. Zatem teoria Wielkiego Wybuchu, rozumiana jako rozszerzenia się Wszechświata od takich małych rozmiarów, jest prawdziwa. Jednak pojawiający się w OTW "punkt zero", moment w którym nie było przestrzeni wydaje się być jedynie artefaktem tej teorii. Nie należy go utożsamiać z Pocztkiem. W "bardziej" prawdziwej teorii kwantowej grawitacji nie powinno go być, choć oczywiście nie znamy jeszcze tej teorii.
+Bardziej zaawansowane modele kosmologiczne oraz obserwacje potwierdzają, że Wszechświat był w przeszłości bardzo mały i bardzo gorący. Zatem teoria Wielkiego Wybuchu, rozumiana jako rozszerzenia się Wszechświata od takich małych rozmiarów, jest prawdziwa. Jednak pojawiający się w OTW "punkt zero", moment w którym nie było przestrzeni wydaje się być jedynie artefaktem tej teorii. Nie należy go utożsamiać z Początkiem. W "bardziej" prawdziwej teorii kwantowej grawitacji nie powinno go być, choć oczywiście nie znamy jeszcze tej teorii.

@@ -25,13 +25,13 @@ defaults:
       path: ""
       type: "notes"
     values:
-      layout: "post"
+      layout: "note"
 
   - scope:
       path: ""
       type: "tutorials"
     values:
-      layout: "post"
+      layout: "tutorial"
 
   - scope:
       path: ""

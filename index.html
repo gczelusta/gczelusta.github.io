@@ -4,7 +4,7 @@ title: Strona główna
 ---
 <div class="articles-featured">
     <div class="article-main check">
-        {% assign main = site.blog | where: 'name', 'more_dimensions' | first %}
+        {% assign main = site.blog | where: 'name', 'lqg' | first %}
         <a href="{{ main.url }}">
             <h2 class="article-title">{{ main.title }}</h2>
             <img src="assets/images/blog/{{ main.name }}.png" alt="">
@@ -19,7 +19,7 @@ title: Strona główna
             <img src="assets/images/blog/{{ aside.name }}.png" alt="">
         </a>
     </div>
-    {% assign aside = site.blog | where: 'name', 'lqg' | first %}
+    {% assign aside = site.blog | where: 'name', 'more_dimensions' | first %}
     <div class="article-aside check">
         <a href="{{ aside.url }}">
             <h3 class="article-aside-title">{{ aside.title }}</h3>
