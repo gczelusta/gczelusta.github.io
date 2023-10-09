@@ -1,8 +1,8 @@
----
+<!-- ---
 name: qg
 title: Grawitacja kwantowa
 level: 1
----
+--- -->
 
 Opis grawitacji w języku fizyki kwantowej pozostaje nierozwiązanym problemem.
 Jako jeden z pierwszych na ten problem zwrócił uwagę Matvei Petrovich Bronstein, rosyjski fizyk zamordowany w młodym wieku, trakcie stalinowskich czystek.

@@ -1,7 +1,7 @@
----
+<!-- ---
 name: JodanSchwinger
 title: Realizacja algebry za pomocą oscylatorów
----
+--- -->
 
 Bozonowe operatory kreacji i anihilacji:
 

@@ -3,6 +3,8 @@ name: qc
 title: Komputery kwantowe
 ---
 
+Komputery kwantowe nie są po prostu kolejnym krokiem w rozwoju obecnych komputerów. Są zupełnie nowym podejściem, które czasami jest lepsze a czasami gorsze od klasycznego.
+
 Wyobraźmy sobie jakiś obiekt fizyczny, który może przyjmować dwa różne
 stany. Na przykład może to być:
 

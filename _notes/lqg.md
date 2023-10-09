@@ -3,7 +3,7 @@ name: lqg
 title: LQG
 ---
 
-Notatki prezentujące w zwięzłej formie podstawy Pętlowej grawitacji kwantowej.
+Notatki prezentujące w zwięzłej formie podstawy pętlowej grawitacji kwantowej.
 
 ## Ogólna Teoria Względności
 

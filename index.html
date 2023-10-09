@@ -4,7 +4,7 @@ title: Strona główna
 ---
 <div class="articles-featured">
     <div class="article-main check">
-        {% assign main = site.blog | where: 'name', 'teleportation' | first %}
+        {% assign main = site.blog | where: 'name', 'more_dimensions' | first %}
         <a href="{{ main.url }}">
             <h2 class="article-title">{{ main.title }}</h2>
             <img src="assets/images/blog/{{ main.name }}.png" alt="">
@@ -12,21 +12,21 @@ title: Strona główna
         </a>
     </div>
     
-    {% assign aside = site.blog | where: 'name', 'bigbang' | first %}
+    {% assign aside = site.blog | where: 'name', 'qc' | first %}
     <div class="article-aside check">
         <a href="{{ aside.url }}">
             <h3 class="article-aside-title">{{ aside.title }}</h3>
             <img src="assets/images/blog/{{ aside.name }}.png" alt="">
         </a>
     </div>
-    {% assign aside = site.notes | where: 'name', 'lqg' | first %}
+    {% assign aside = site.blog | where: 'name', 'lqg' | first %}
     <div class="article-aside check">
         <a href="{{ aside.url }}">
             <h3 class="article-aside-title">{{ aside.title }}</h3>
-            <img src="assets/images/notes/{{ aside.name }}.png" alt="">
+            <img src="assets/images/blog/{{ aside.name }}.png" alt="">
         </a>
     </div>
-    {% assign aside = site.tutorials | where: 'name', 'krypto' | first %}
+    {% assign aside = site.tutorials | where: 'name', 'crypto' | first %}
     <div class="article-aside check">
         <a href="{{ aside.url }}">
             <h3 class="article-aside-title">{{ aside.title }}</h3>
@@ -35,10 +35,10 @@ title: Strona główna
     </div>
 </div>
 <p>Jest to strona poświęcona fizyce. Próbująca pokazać, że choć fizyka opisuje złożony świat to wbrew pozorom potrafi być prosta.</p>
-<p>W zakładce Blog będą pojawiać się popularnonaukowe teksty oraz nieco bardziej subiektywne komentarze do zagadnień, zarówno z fizyki, jak i luźno z nią powiązanych.</p>
+<!-- <p>W zakładce Blog będą pojawiać się popularnonaukowe teksty oraz nieco bardziej subiektywne komentarze do zagadnień, zarówno z fizyki, jak i luźno z nią powiązanych.</p>
 <p>W zakładce Notatki będą poruszane mniej popularnonaukowe tematy, bez szczegółowego wyjaśniania wszystkich poruszonych zagadnień. Będą one wymagać pewnej wstępnej wiedzy z fizyki lub matematyki</p>
 <p>Zakładka Tutoriale będzie zawierać mini kursy pozwalające krok po kroku zapoznać się z jakimś zagadnieniem. Będą tam również zadania i ćwiczenia do wykonania pozwalające lepiej zrozumieć poruszany temat i sprawdzić się. Niektóre z tutoriali mogą wymagać jakichś wstępnych umiejętności czy to z matematyki czy z informatyki.</p>
-<p>Ostatnia zakładka Publikacje będzie zawierać popularnonaukowe opisy publikacji naukowych wraz z odnośnikami do oryginalej treści publikacji.</p>
+<p>Ostatnia zakładka Publikacje będzie zawierać popularnonaukowe opisy publikacji naukowych wraz z odnośnikami do oryginalej treści publikacji.</p> -->
 <p>Wszystkie artykuły mają oznaczenie poziomu trudności. Jedna kropka <span style="color: rgb(50, 91, 205)">&#9679;&#9675;&#9675;</span> oznacza, że do zrozumienia danej treści nie jest wymagana żadna specjalistyczna wiedza, czyli wystarczy wiedza na poziomie licealnym. Dwie kropki <span style="color: rgb(50, 91, 205)">&#9679;&#9679;&#9675;</span> oznaczają, że potrzebna jest podstawowa wiedza z nauk ścisłych fizyki, matematyki czy informatyki na poziomie pierwszego roku studiów kierunku ścisłego lub technicznego. Trzy kropki <span style="color: rgb(50, 91, 205)">&#9679;&#9679;&#9679;</span> oznaczają, że potrzebna jest znajomość zagadnień bardziej specjalistycznych, czyli na poziomie wyższych lat studiów takich jak fizyka czy matematyka.</p>
 <p>Wiele artykułów zawiera również sekcję z listą innych artykułów ze strony, które warto najpierw przeczytać oraz sekcję z artykułami pogłębiającymi dany temat.</p>
 <p>Ilustracje na miniaturkach większości artykułów są obrazkami wygenerowanymi przez Stable Diffusion.</p>

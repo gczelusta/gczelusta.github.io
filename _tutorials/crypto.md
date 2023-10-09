@@ -1,5 +1,5 @@
 ---
-name: krypto
+name: crypto
 title: Kryptografia
 level: 1
 ---

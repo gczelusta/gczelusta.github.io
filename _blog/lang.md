@@ -3,10 +3,12 @@ name: lang
 title: Język fizyki współczesniej
 ---
 
-## Lagrange
+Wkrótce!
+
+<!-- ## Lagrange
 
 ## Hamilton
 
 ## Geometria różniczkowa
 
-## Przykład: elektromagnetyzm
+## Przykład: elektromagnetyzm -->

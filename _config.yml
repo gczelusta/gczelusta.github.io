@@ -37,3 +37,9 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+
+url: "https://gczelusta.github.io"
+github_username:  gczelusta
+plugins:
+  - jekyll-feed

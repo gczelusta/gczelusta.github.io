@@ -4,6 +4,8 @@ title: Ogólna teoria względności
 level: 2
 ---
 
+Notatki prezentujące w zwięzłej formie podstawy ogólnej teorii względności.
+
 # Geometria Riemannowska
 
 ## Gładkie pole wektorowe $\mathcal{X}(M)$
