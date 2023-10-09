@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="baner">
+    <img src="/assets/images/publications/{{ page.name }}.png" alt="">
+</div>
+
+<h2>{{ page.title }}</h2>
+
+{% for tag in page.tags %}
+    <a href="/{{ tag }}.html" class="tags">| {{ tag }}</a>
+{% endfor %}
+
+<div class = "bib">
+    <p><i>{{ page.bib }}</i></p>
+</div>
+<div class = "arxiv">
+    <a href="{{ page.arxiv }}">ArXiv</a>
+</div>
+{% if page.paper %}
+    <div class = "paper">
+        <a href="{{ page.paper }}">Publikacja</a>
+    </div>
+{% endif %}
+{{ content }}

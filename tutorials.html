@@ -1,0 +1,15 @@
+---
+title: Tutoriale
+---
+
+<div class="gallery">
+    {% for post in site.tutorials %}
+    <div class="gallery-item">
+        <a href="{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+            <img src="assets/images/tutorials/{{ post.name }}.png" alt="">
+            <p>{{ post.excerpt | markdownify }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>

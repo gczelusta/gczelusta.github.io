@@ -1,0 +1,10 @@
+- name: Strona główna
+  link: /
+- name: Blog
+  link: /blog.html
+- name: Notatki
+  link: /notes.html
+- name: Tutoriale
+  link: /tutorials.html
+- name: Publikacje
+  link: /publications.html

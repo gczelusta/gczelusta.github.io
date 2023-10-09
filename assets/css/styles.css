@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
+/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); */
+
+:root {
+    --main-background-color: #72a1f87e;
+    --heading-color: rgb(50, 91, 205);
+    --highlight-color: rgba(50, 91, 205, 0.514);
+}
+
+
+.articles-featured {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    row-gap: 1em;
+    column-gap: 2em;
+    grid-auto-rows: minmax(200px, auto);
+    /* justify-items: stretch; */
+    /* align-items: end; */
+    margin-bottom: 1em;
+}
+
+.article-main {
+    grid-row: 1/4;
+}
+
+.article-img {
+    order: -2;
+}
+
+.article-info {
+    order: -1;
+}
+/* 
+.article-main h2 {
+    order: -1;
+} */
+
+/* .check { */
+    /* border: 5px solid red; */
+/* } */
+
+.article-aside {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    
+    padding-bottom: 1em;
+    border-bottom: 2px solid var(--main-background-color);
+}
+
+.article-aside:last-child {
+    border: none;
+}
+
+.article-aside img {
+    width: 100%;
+    /* max-height: 80%; */
+    object-fit: cover;
+}
+
+/* .article-aside h2 { */
+    /* background-color: red; */
+    /* margin: 0; */
+/* } */
+
+.articles-featured {
+    border-bottom: 2px solid var(--main-background-color);
+}
+
+.articles-featured a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* .article-main:hover, */
+/* .article-main:focus { */
+    /* border: 3px solid white; */
+/* } */
+
+/* .article-main h2 {
+    background-color: red;
+    margin-left: 0.2em; 
+} */
+
+/* .article-main p {
+    background-color: red;
+    margin-left: 0.2em;
+} */
+
+/* .article-aside:hover,
+.article-aside:focus {
+    border: 3px solid white;
+    border-bottom: 2px solid var(--main-background-color);
+} */
+
+/* .article-aside:last-child:hover, */
+/* .article-aside:last-child:focus { */
+    /* border: 3px solid white; */
+/* } */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+
+.gallery a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    /* font-family: 'Playfair Display', serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* .image-full {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 2em;
+} */
+
+h1,
+h2,
+h3 {
+    /* font-family: 'Baloo 2', cursive; */
+    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Paytone One', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: ; 
+    font-weight: ;*/
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+
+/* a:hover h2,
+a:focus h2 {
+    color: var(--highlight-color);
+} */
+
+
+.site-name a {
+    text-decoration: none;
+}
+
+.subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    /* font-family: 'Comfortaa', cursive; */
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.article-title {
+    font-size: 2rem;
+}
+
+.article-info {
+    font-size: .875rem;
+    margin: 2em 0 0.5em 0;
+}
+
+
+.article-aside-title {
+    font-size: 1rem;
+    color: var(--heading-color);
+    margin-top: 0.5em;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header {
+    background: var(--main-background-color);
+    padding: 2em 0;
+    margin-bottom: 3em;
+}
+
+footer {
+    background: var(--main-background-color);
+    color: white;
+    text-align: center;
+    padding: 3em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+nav li {
+    margin-left: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Comfortaa', cursive; */
+    color: var(--heading-color);
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding: .25em 0;
+}
+
+nav a:hover, nav:focus {
+    color: var(--highlight-color);
+}
+
+.current-page {
+    border-bottom: 1px solid var(--heading-color);
+}
+
+.current-page:hover {
+    /* color: var(--highlight-color); */
+    border-bottom: 1px solid var(--highlight-color);
+}
+
+/* @media (max-width: 675px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav li {
+        margin: .5em 0;
+    }
+} */
+
+/*articles*/
+
+
+.article-recent-main {
+    order: 2;
+}
+
+.article-recent-secondary {
+    order: 1;
+}
+
+@media (min-width: 675px) {
+    .article-recent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .article-recent-main {
+        width: 68%;
+    }
+    .article-recent-secondary {
+        width: 30%;
+    }
+    .article-image {
+        width: 100%;
+        min-height: 300px;
+        object-fit: cover;
+    }
+    .article-featured {
+        display: flex;
+        flex-direction: column;
+    }
+    .article-image {
+        order: -2;
+    }
+    .article-info {
+        order: -1;
+    }
+}
+
+/*widget*/
+
+.sidebar-widget {
+    border-left: 5px solid var(--main-background-color);
+    margin-bottom: 2em;
+    padding-left: 2em;
+}
+
+.widget-recent-post {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--main-background-color);
+    margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+    border: 0;
+    margin: 0;
+}
+
+.widget-image {
+    order: -1;
+}
+
+/* tags */
+
+.tags {
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.arxiv a {
+    color: var(--heading-color);
+    text-decoration: underline;
+}
+
+.paper a {
+    color: var(--heading-color);
+    text-decoration: underline;
+}
+
+.bib {
+    color: var(--heading-color);
+}
+
+.level {
+    color: var(--heading-color);
+}
+
+.baner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: var(--highlight-color);
+    padding-left: 10px;
+    /* background-color: var(--main-background-color); */
+    /* padding: 10px; */
+}
+
+.read-more a {
+    text-decoration: underline;
+    color: var(--heading-color);
+}
+
+.read-more p {
+    color: var(--heading-color)
+}
+
+ /* Style the button that is used to open and close the collapsible content */
+ .collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, button.collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  /* .content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    display: block;
+    transition: max-height 0.2s ease-out;
+    color: black;
+  } */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }

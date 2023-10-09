@@ -1,0 +1,16 @@
+---
+title: Publikacje
+---
+<h2>{{ page.title }}</h2>
+
+<div class="gallery">
+    {% for paper in site.publications %}
+    <div class="gallery-item">
+        <a href="{{ paper.url }}">
+            <h3>{{ paper.title }}</h3>
+            <img src="assets/images/publications/{{ paper.name }}.png" alt="">
+            <p>{{ paper.excerpt | markdownify }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+<nav>
+	<ul>
+		<!--<li><a href="/" class="{% if page.url == "/" %}current-page{% endif %} material-icons">home</a></li>-->
+		{% for item in site.data.navigation %}
+			<li><a href="{{ item.link }}" class="{% if page.url == item.link %}current-page{% endif %}">{{ item.name }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>
