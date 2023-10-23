@@ -44,9 +44,8 @@ Jednak w fizyce kwantowej, opisującej świat na fundamentalnym poziomie,
 w małych skalach, układ może być w stanie *superpozycji*, tzn. być
 kombinacją tych dwóch stanów:
 
-$$|\psi\rangle = \alpha|0\rangle+\beta|1\rangle
-        \label{eq:superpozycja}$$
-        
+$$|\psi\rangle = \alpha|0\rangle+\beta|1\rangle$$
+
 przez $|\psi\rangle$ oznaczyliśmy
 tutaj ogólnie pewien stan układu, natomist $\alpha$ i $\beta$ są
 liczbami, w ogólności zespolonymi, określają one na ile stan
@@ -75,46 +74,54 @@ w superpozycji. Otóż jeżeli będziemy powtarzać eksperyment polegający na
 wysłaniu fotonu w kierunku półprzepuszczalnego lustra a następnie
 dokonaniu pomiaru, to czasami będziemy otrzywać wynik pomiaru $0$ a
 czasami $1$, w sposób losowy. Jednak prawdopodobieństwo otrzymania
-danego wyniku będzie zdeterminowane przez stan układu
-(\[eq:superpozycja\]). Tzn. prawdopodobieństo otrzymania wyniku $0$
+danego wyniku będzie zdeterminowane przez stan układu $|\psi\rangle$. Tzn. prawdopodobieństo otrzymania wyniku $0$
 będzie równe $|\alpha|^2$, prawdopodobieństo otrzymania wyniku $1$
 będzie równe $|\beta|^2$.
 
 Spójrzmy na przykład, weźmy foton padający na półprzepuszczalne lustro,
 które jest dokładnie w $50\%$ półprzepuszczalne. Wtedy stan fotonu po
 interakcji z lustrem będzie postaci:
-$$|\psi\rangle = \frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle
-            \label{eq:plus}$$ Dlaczego? Bo w takim stanie
+
+$$|\psi\rangle = \frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle$$
+
+Dlaczego? Bo w takim stanie
 prawdopodobieństo, że foton ulegnie odbiciu (czyli otrzymamy wynik
 pomiaru $0$) jest równe $|\frac{1}{\sqrt{2}}|^2=\frac{1}{2}$, oraz
 prawdopodobieństo, że foton przejdzie (czyli otrzymamy wynik pomiaru
 $1$) jest równe $|\frac{1}{\sqrt{2}}|^2=\frac{1}{2}$.
 
-Biorąc pod uwagę, że moduł kwadrat współczynnika w stanie
-(\[eq:superpozycja\]), oznacza prawdopodobieństwo, określ ile dla
+Biorąc pod uwagę, że moduł kwadrat współczynnika w stanie $|\psi\rangle$,
+oznacza prawdopodobieństwo, określ ile dla
 dowolnego stanu kwantowego wynosi wyrażenie: $$|\alpha|^2+|\beta|^2=?$$
 
 Powiedzieliśmy poprzednio, że aby eksperymentalnie określić
 prawdopodobieństwa wyników musimy cały eksperyment powtórzyć
 wielokrotnie. Dlaczego nie możemy raz wysłać fotonu w kierunku lustra a
 potem wielokrotnie dokonać pomiaru? Dlatego, że w wyniku pomiaru
-następuje *kolaps* stan kwantowego, tzn.: $$\begin{cases}
+następuje *kolaps* stan kwantowego, tzn.:
+
+$$\begin{cases}
             \alpha|0\rangle+\beta|1\rangle \rightarrow |0\rangle & \text{gdy wynik pomiaru to $0$}\\
             \alpha|0\rangle+\beta|1\rangle \rightarrow |1\rangle & \text{gdy wynik pomiaru to $1$}\\
-        \end{cases}$$ Zatem stan kwantowy przestaje być superpozycją.
+        \end{cases}$$
+        
+Zatem stan kwantowy przestaje być superpozycją.
 
-Weźmy układ w stanie zadanym wzorem:
+<!-- Weźmy układ w stanie zadanym wzorem:
+
 $$|\psi\rangle = \frac{\sqrt{3}}{2}|0\rangle-\frac{1}{\sqrt{2}}|1\rangle$$
+
 Jakie jest prawdopodobieństwo otrzymania wyniku $0$ a jakie wyniku $1$?
 Po dokonaniu pomiaru dokonujemy go jeszcze raz (na tym samym układzie,
 bez przygotowywanie go od nowa), jakie jest prawdopodobieństo otrzymania
 wyniku $0$ a jakie wyniku $1$, rozpatrz przypadki gdy w poprzednim
-pomiarze wynik był $0$ i gdy był $1$.
+pomiarze wynik był $0$ i gdy był $1$. -->
 
 Stan układu, który dotychczas zapisywaliśmy w tzw. notacji *braketowej*
 można również zapisać za pomocą wektora. W przypadku układów kóre tu
 opisujemy potrzebujemy wektory o dwóch współrzędnych. Wektory opisujące
 stany bazowe to:
+
 $$|0\rangle = \left(\begin{array}[]{c}
             1\\
             0\\
@@ -125,6 +132,7 @@ $$|0\rangle = \left(\begin{array}[]{c}
 
 Natomiast dowolny stan będzie opisywany
 wektorem:
+
 $$|\psi\rangle=\alpha|0\rangle+\beta|1\rangle=\alpha\left(\begin{array}[]{c}
             1\\
             0\\
@@ -136,15 +144,21 @@ $$|\psi\rangle=\alpha|0\rangle+\beta|1\rangle=\alpha\left(\begin{array}[]{c}
         \left(\begin{array}[]{c}
             \alpha\\
             \beta\\
-        \end{array}\right)$$ Umiemy już zapisywać stan układu
+        \end{array}\right)$$
+        
+Umiemy już zapisywać stan układu
 kwantowego. Zobaczmy teraz jak zapisać operacje na tym układzie.
 Operację wykonywaną na układzie możemy zapisać za pomocą macierzy. Weźmy
-na przykład taką macierz: $$H=\left(\begin{array}{cc}
+na przykład taką macierz:
+
+$$H=\left(\begin{array}{cc}
             \frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
             \frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{2}}\\
-            \end{array}\right)
-            \label{eq:hadamard}$$ aby zobaczyć jak działa na stan
+            \end{array}\right)$$
+            
+aby zobaczyć jak działa na stan
 $|0\rangle$ wykonujemy następujące obliczenie:
+
 $$H|0\rangle=\left(\begin{array}{cc}
             \frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\
             \frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{2}}\\
@@ -157,18 +171,25 @@ $$H|0\rangle=\left(\begin{array}{cc}
                 \frac{1}{\sqrt{2}}\\
                 \frac{1}{\sqrt{2}}\\
             \end{array}\right)=
-            \frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle$$ W
-wyniku działania macierzy $H$ na stan $|0\rangle$ otrzymujemy stan
-(\[eq:plus\]). Można zatem powiedzieć, że w przypadku układu będącego
+            \frac{1}{\sqrt{2}}|0\rangle+\frac{1}{\sqrt{2}}|1\rangle$$
+
+W wyniku działania macierzy $H$ na stan $|0\rangle$ otrzymujemy stan $\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)$.
+Można zatem powiedzieć, że w przypadku układu będącego
 fotonem padającym na płytkę, macierz $H$ opisuje działanie płytki o
 półprzepuszczalności dokładnie $50\%$. Wszystkie zmiany stanu (poza
 pomiarem) są opisywane przez tzw. macierze *unitarne*. Są to macierze
-spełniające warunek: $$UU^\dagger=\mathbb{I}$$ gdzie $\mathbb{I}$ to
-macierz jednostkowa: $$\mathbb{I}=\left(\begin{array}{cc}
+spełniające warunek:
+
+$$UU^\dagger=\mathbb{I}$$ gdzie $\mathbb{I}$ to macierz jednostkowa:
+
+$$\mathbb{I}=\left(\begin{array}{cc}
             1&0\\
             0&1\\
-            \end{array}\right)$$ natomiast $\dagger$ oznacza *sprzeżenie
+            \end{array}\right)$$
+            
+natomiast $\dagger$ oznacza *sprzeżenie
 hermitowskie* tzn. transpozycję macierzy wraz ze zespolonym sprzężeniem:
+
 $$\left(\begin{array}{cc}
             a&b\\
             c&d\\
@@ -176,15 +197,17 @@ $$\left(\begin{array}{cc}
             \left(\begin{array}{cc}
                 \bar{a}&\bar{c}\\
                 \bar{b}&\bar{d}\\
-                \end{array}\right)$$ We wszystkich zadaniach będziemy
+                \end{array}\right)$$
+                
+We wszystkich zadaniach będziemy
 rozpatrywać jedynie stany z rzeczywistymi (nie-zespolonymi)
 współczynnikami, zatem możesz zapomnieć o sprzężeniu ($\bar{.}$).
 
-Sprawdź czy macierz: $$R = \left(\begin{array}{cc}
+<!-- Sprawdź czy macierz: $$R = \left(\begin{array}{cc}
                 \cos\theta&\sin\theta\\
                 \sin\theta&\cos\theta\\
                 \end{array}\right)$$ jest unitarna dla dowolnego
-$\theta$.
+$\theta$. -->
 
 Dotychczas rozpatrywane układy, mające dwa stany bazowe, mogą pełnić
 rolę *kubitu*, czyli podstawowej jednostki komputer kwantowego. Zanim
@@ -194,63 +217,63 @@ Przykładem stanu dwu kubitowego może być układ dwóch cząstek, z których
 każda może poruszać się w lewo lub w prawo. Tak jak wcześniej stan
 każdej z nich możemy oznaczyć za pomocą $|0\rangle$ i $|1\rangle$,
 natomiast stan całego układu będzie mógł przyjmować cztery bazowe stany:
-$$\begin{cases}
-            \text{pierwszy stan:} &|00\rangle\;np.:
-                    |\includegraphics[scale=0.1, valign=c]{czastka_v1.png}
-                    \includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle\\
-            \text{drugi stan:} &|01\rangle\;np.:
-                    |\includegraphics[scale=0.1, valign=c]{czastka_v1.png}
-                    \includegraphics[scale=0.1, valign=c]{czastka_v2.png}\rangle\\
 
-            \text{trzeci stan:} &|10\rangle\;np.:
-                    |\includegraphics[scale=0.1, valign=c]{czastka_v2.png}
-                    \includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle\\
+|pierwszy stan:| $$\|00\rangle$$ | np.: | ![image](/assets/images/blog/czastka_v1.png) | ![image](/assets/images/blog/czastka_v1.png) |
+|drugi stan:   | $$\|01\rangle$$ | np.: | ![image](/assets/images/blog/czastka_v1.png) | ![image](/assets/images/blog/czastka_v2.png) |
+|trzeci stan:  | $$\|10\rangle$$ | np.: | ![image](/assets/images/blog/czastka_v2.png) | ![image](/assets/images/blog/czastka_v1.png) |
+|czwarty stan: | $$\|11\rangle$$ | np.: | ![image](/assets/images/blog/czastka_v2.png) | ![image](/assets/images/blog/czastka_v2.png) |
 
-            \text{czwarty stan:} &|11\rangle\;np.:
-                    |\includegraphics[scale=0.1, valign=c]{czastka_v2.png}
-                    \includegraphics[scale=0.1, valign=c]{czastka_v2.png}\rangle\\
-        \end{cases}$$ natomiast dowolny stan tego układu będzie
+natomiast dowolny stan tego układu będzie
 kombinacją tych czterech:
+
 $$|\psi\rangle = \alpha|00\rangle+\beta|01\rangle+\gamma|10\rangle+\delta|11\rangle$$
+
 możemy również użyć notacji wektorowej, teraz jednak będziemy
 potrzebować wektorów cztero elementowych:
+
 $$|00\rangle=\left(\begin{array}{c}
             1\\
             0\\
             0\\
             0\\
-            \end{array}\right)$$ $$|01\rangle=\left(\begin{array}{c}
+            \end{array}\right)
+|01\rangle=\left(\begin{array}{c}
             0\\
             1\\
             0\\
             0\\
-            \end{array}\right)$$ $$|10\rangle=\left(\begin{array}{c}
+            \end{array}\right)
+|10\rangle=\left(\begin{array}{c}
             0\\
             0\\
             1\\
             0\\
-            \end{array}\right)$$ $$|11\rangle=\left(\begin{array}{c}
+            \end{array}\right)
+|11\rangle=\left(\begin{array}{c}
             0\\
             0\\
             0\\
             1\\
             \end{array}\right)$$
+
 $$|\psi\rangle=\alpha|00\rangle+\beta|01\rangle+\gamma|10\rangle+\delta|11\rangle=\left(\begin{array}{c}
             \alpha\\
             \beta\\
             \gamma\\
             \delta\\
-            \end{array}\right)$$ Natomiast do opisu operacji będziemy
+            \end{array}\right)$$
+            
+Natomiast do opisu operacji będziemy
 potrzebować macierzy unitarnych $4\times4$.
 
-Ilu elementowych wektorów będziemy potrzebować aby opisać układ $N$
+<!-- Ilu elementowych wektorów będziemy potrzebować aby opisać układ $N$
 kubitów? A ilu elementowych macierzy będziemy potrzebować aby opisać
 układ $N$ kubitów? Przyjmij, że na zapisanie jedenj liczby w komputerze
 klasycznym potrzebujemy $8$ bajtów. Policz ile pamięci RAM potrzebowałby
 komputer klasyczny aby w pełni przechować macierz opisującą operację na
 $20$ kubitach, czyli np. opisać $20$ fotonów padających na płytkę. Wynik
 podaj w terabajtach. Przyjmij, że zapisujemy każdy element macierzy, nie
-korzytsamy z żadnych szczególnych cech tej macierzy.
+korzytsamy z żadnych szczególnych cech tej macierzy. -->
 
 W algorytmach kwantowych czyli ,,programach komputerowych” wykonywanych
 na komputerach kwantowych, stosuje się notację za pomocą *obwodów*
@@ -258,17 +281,13 @@ kwantowych i *bramek* kwantowych. Każdy kubit reprezentuje pozioma
 linia, np. tu mamy układ dwóch kubitów zainicjowanych w stanie
 $|00\rangle$.
 
-@C=1em @R=1em [ &\
-&\
-]{}
+![](/assets/images/blog/circ1.png)
 
 następnie operacje wykonywane na kubitach, są reprezentowane za pomocą
-bramek, np. macierz (\[eq:hadamard\]), to tzw. bramka Hadamarda, możemy
+bramek, np. macierz $H$, którą widzieliśmy wcześniej, to tzw. *bramka Hadamarda*, możemy
 ją zaznaczyć na obwodzie:
 
-@C=1em @R=1em [ & & &\
-& & &\
-]{}
+![](/assets/images/blog/circ2.png)
 
 w tym przypadku działa ona na pierwszy kubit. Jak widzieliśmy wcześniej
 bramka ta ze stanu $|0\rangle$ robi
@@ -283,56 +302,65 @@ możemy wypisać jedynie jak działa na stany bazowe. Będzie to tzw.
 kontrolowany NOT, CNOT, jest to bramka, która zmienia drugi kubit z
 $|0\rangle$ na $|1\rangle$ lub z $|1\rangle$ na $|0\rangle$, ale tylko
 wtedy jeśli pierwszy kubit był w stanie $|1\rangle$.
-$$CNOT|00\rangle=|00\rangle$$ $$CNOT|01\rangle=|01\rangle$$
-$$CNOT|10\rangle=|11\rangle$$ $$CNOT|11\rangle=|10\rangle$$ dodajmy ją
-do naszego wcześniejszego obwodu:
 
-@C=1em @R=1em [ & & & &\
-& & & &\
-]{}
+$$CNOT|00\rangle=|00\rangle$$
+
+$$CNOT|01\rangle=|01\rangle$$
+
+$$CNOT|10\rangle=|11\rangle$$
+
+$$CNOT|11\rangle=|10\rangle$$
+
+dodajmy ją do naszego wcześniejszego obwodu:
+
+![](/assets/images/blog/circ3.png)
 
 stan układu po wykonaniu tego obwodu przyjmie postać:
-$$\frac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)
-        \label{eq:splatany}$$
 
-Dany jest obwód:
+$$\frac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)$$
+
+<!-- Dany jest obwód:
 
 @C=1em @R=1em [ & & & &\
 & & & &\
 & & & &\
 ]{}
 
-gdzie $$R_y\left(\theta\right)=\left(\begin{array}{cc}
+gdzie
+
+$$R_y\left(\theta\right)=\left(\begin{array}{cc}
                 \cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\
                 \sin\frac{\theta}{2}&\cos\frac{\theta}{2}\\
-                \end{array}\right)$$ Oblicz prawdopodobieństwo
+                \end{array}\right)$$
+    
+Oblicz prawdopodobieństwo
 otrzymania wyniku $101$ w pomiarze na końcu tego obwodu dla
-$\theta=\frac{\pi}{3}$.
+$\theta=\frac{\pi}{3}$. -->
 
 Istnieje jeszcze jeden bardzo ważny aspekt stanów kwantowych, nie mający
-klasycznego odpowiednika, *splątanie* kwantowe. Spójrzmy na stan
-(\[eq:separowalny\]), jak widać można go zapisać jako iloczyn stanów
+klasycznego odpowiednika, *splątanie* kwantowe. Spójrzmy na
+powyższy stan, jak widać można go zapisać jako iloczyn stanów
 poszczególnych kubitów:
+
 $$\frac{1}{\sqrt{2}}\left(|00\rangle+|10\rangle\right)=
         \frac{1}{\sqrt{2}}\left(|0\rangle+|1\rangle\right)|0\rangle$$
+
 Taki stan nazywamy *separowalnym*, stany które nie są separowalne to
-właśnie stany splątane. Przykładem takiego stanu jest (\[eq:splatany\]),
+właśnie stany splątane. Przykładem takiego stanu jest właśnie stan na końcu powyższego obwodu $\frac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)$,
 nie da się go zapisać jako iloczyn stanów na obu kubitach.
 
-Dla każdego z podanych stanów określ czy jest separowalny czy splątany:
+<!-- Dla każdego z podanych stanów określ czy jest separowalny czy splątany:
 $$|\psi_1\rangle = \frac{1}{2}\left(|00\rangle+|01\rangle+|10\rangle+|11\rangle\right)$$
-$$|\psi_2\rangle = \frac{1}{2}\left(|00\rangle+|01\rangle+|10\rangle-|11\rangle\right)$$
+$$|\psi_2\rangle = \frac{1}{2}\left(|00\rangle+|01\rangle+|10\rangle-|11\rangle\right)$$ -->
 
 Splątanie kwantowe wprowadza korelację między wynikami pomiarów na
 poszczególnych podukładach układu. Sprawia poza tym, że znajomość stanu
 każdego z podukładu nie wystarcza aby poznać stan całego ukladu.
 Spójrzmy na przykład dwóch cząstek, z ktorych każda może poruszać się w
-lewo lub w prawo. Wprowadźmy je najpierw w stan separowalny
-(\[eq:separowalny\]):
-$$\frac{1}{\sqrt{2}}\left(|\includegraphics[scale=0.1, valign=c]{czastka_v1.png}
-                                    \includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle+
-                                |\includegraphics[scale=0.1, valign=c]{czastka_v2.png}
-                                    \includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle\right)$$
+lewo lub w prawo. Wprowadźmy je najpierw w stan separowalny:
+
+| $$\frac{1}{\sqrt{2}}\left(\|00\rangle+\|10\rangle\right)=$$ | ![](/assets/images/blog/czastka_v1.png) | ![](/assets/images/blog/czastka_v1.png)| $$+$$ | ![](/assets/images/blog/czastka_v2.png) | ![](/assets/images/blog/czastka_v1.png) |
+
 Kiedy dokonamy pomiaru na pierwszej cząstce jako wynik możemy
 zarejestrować albo ruch w lewo albo w prawo, z prawdopodobieństwami
 $50\%$. Dokonując pomiaru na drugiej cząstce zawsze dostaniemy w wyniku
@@ -340,11 +368,10 @@ ruch w lewo. Wyniki pomiarów na obu cząstkach są od siebie całkowicie
 niezależne. Znając wynik pomiaru na jednej z cząstek, np. wiedząc że
 pomiar na drugiej cząstce dał wynik w lewo, nie możemy przewidzieć
 wyniku pomiaru na pierwszej cząstce, który wciąż może być w lewo lub w
-prawo. Spójrzmy teraz na przypadek splątany (\[eq:splatany\]):
-$$\frac{1}{\sqrt{2}}\left(|\includegraphics[scale=0.1, valign=c]{czastka_v1.png}
-                                    \includegraphics[scale=0.1, valign=c]{czastka_v1.png}\rangle+
-                                |\includegraphics[scale=0.1, valign=c]{czastka_v2.png}
-                                    \includegraphics[scale=0.1, valign=c]{czastka_v2.png}\rangle\right)$$
+prawo. Spójrzmy teraz na przypadek splątany:
+
+| $$\frac{1}{\sqrt{2}}\left(\|00\rangle+\|11\rangle\right)=$$ | ![](/assets/images/blog/czastka_v1.png) | ![](/assets/images/blog/czastka_v1.png)| $$+$$ | ![](/assets/images/blog/czastka_v2.png) | ![](/assets/images/blog/czastka_v2.png) |
+                      
 Kiedy dokonamy pomiaru na pierwszej cząstce jako wynik możemy
 zarejestrować albo ruch w lewo albo w prawo, z prawdopodobieństwami
 $50\%$. Dokonując pomiaru na drugiej cząstce sytuacja jest taka sama,
@@ -356,13 +383,15 @@ wiemy, że na pewno wynik pomiaru na pierwszej cząstce, da również wynik
 w lewo. Jeżeli pomiar na drugiej cząstce dałby wynik w prawo, to wynik
 pomiaru na pierwszej cząstce, da również wynik w prawo.
 
-Alicja wygenerowała dwie cząstki w stanie:
+<!-- Alicja wygenerowała dwie cząstki w stanie:
+
 $$|\psi\rangle = \frac{1}{\sqrt{3}}\left(|00\rangle+|01\rangle+|10\rangle\right)$$
+
 Pierwszą cząstkę zostawiła dla siebie a drugą wysłała do Boba. Następnie
 dokonała pomiaru na swojej cząstce otrzymując wynik $0$. Jakie jest
 prawdopodobieństo, że gdy Bob dokona teraz pomiaru na swojej cząstce to
 otrzyma $0$? A jakie byłoby to prawdopodobieństwo gdyby Alicja wczesniej
-otrzymała wynik $1$?
+otrzymała wynik $1$? -->
 
 Poznane przez nas zjawiska kwantowe są wykorzystywane do tworzenia
 algorytmów kwantowych. Uruchamiane na komputerach kwantowych mogą one
@@ -379,8 +408,8 @@ bezpieczny.
 Wszystkie omawiane tu cechy kwantowego świata oraz algorytmy wspomniane
 powyżej możesz samemu przetestować na prawdziwym komputerze kwantowym.
 Firma IBM oferuje dostęp do niektórych swoich komputerów kwantowych,
-wystarczy założyć konto na stronie: https://quantum-computing.ibm.com/
+wystarczy założyć konto na stronie: [https://quantum-computing.ibm.com/](https://quantum-computing.ibm.com/)
 Następnie można tam tworzyć algorytmy kwantowe (reprezentowane przez
 obwody kwantowe, które poznaliśmy) i je uruchamiać. Można to robić
 korzystając z graficznego kompozytora lub programujac w Pythonie za
-pomocą biblioteki https://qiskit.org/
+pomocą biblioteki [https://qiskit.org/](https://qiskit.org/).
