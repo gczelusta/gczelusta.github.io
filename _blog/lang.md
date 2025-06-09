@@ -1,7 +1,7 @@
----
+<!-- ---
 name: lang
 title: Język fizyki współczesniej
----
+--- -->
 
 Wkrótce!
 

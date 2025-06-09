@@ -1,0 +1,15 @@
+---
+title: Projekty
+---
+
+<div class="gallery">
+    {% for post in site.projects %}
+    <div class="gallery-item">
+        <a href="{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+            <img src="assets/images/projects/{{ post.name }}.png" alt="">
+            <p>{{ post.excerpt | markdownify }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
