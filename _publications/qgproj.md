@@ -1,9 +1,14 @@
 ---
 name: qgproj
 title: Quantum circuits for Ising spin networks
+arxiv: https://arxiv.org/pdf/2304.03559
+paper: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.108.086027
 ---
 
-To describe gravity on small scales or in high-energy situations, we need a quantum theory of gravity. Einstein's theory of general relativity is a fairly good description of gravity in many situations. However, to understand extreme phenomena such as black holes or the beginning of the universe, quantum gravity is necessary.
+Artykuł proponuje ulepszoną metodę budowy obwodów kwantowych dla 4-walentnych sieci spinowych typu Ising w pętlowej grawitacji kwantowej. Nowy schemat wymaga mniej kubitów niż wcześniejsze i opiera się na wariacyjnym przenoszeniu częściowych stanów, co upraszcza implementację nawet dla sieci z 10 węzłami. Mniejsze zasoby sprzętowe otwierają drogę do badania bardziej złożonych konfiguracji SU(2) na grafach i wzmacniają możliwości zastosowania komputerów kwantowych w analizie grawitacji kwantowej.
+
+
+<!-- To describe gravity on small scales or in high-energy situations, we need a quantum theory of gravity. Einstein's theory of general relativity is a fairly good description of gravity in many situations. However, to understand extreme phenomena such as black holes or the beginning of the universe, quantum gravity is necessary.
 
 General relativity teaches us that gravity is actually the geometry of spacetime, so quantum gravity should give us a fundamental description of space and time. Our naïve understanding of space and time can completely collapse. It is possible that space and time are just emergent phenomena, which means that in principle there is no space and time, but there is some other thing that interacts and looks like space-time from our point of view.
 
@@ -27,4 +32,4 @@ As we can see, the number of required qubits is four times larger than the numbe
 
 Then, using the state of "open pentagram", we can glue two such states and prepare the state of spin network with ten nodes.
 
-Our goal is to simulate large spin networks in order to study the so-called semiclassical behavior of LQG. It is worth emphasizing that we are only considering quantum space here, not time; spin networks describe the geometry of space. To describe the geometry of spacetime we need to use so-called spinfoams, which are spin networks evolved in time. But this is the future of our research.
+Our goal is to simulate large spin networks in order to study the so-called semiclassical behavior of LQG. It is worth emphasizing that we are only considering quantum space here, not time; spin networks describe the geometry of space. To describe the geometry of spacetime we need to use so-called spinfoams, which are spin networks evolved in time. But this is the future of our research. -->

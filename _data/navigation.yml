@@ -6,8 +6,8 @@
 #   link: /notes.html
 - name: Tutoriale
   link: /tutorials.html
-# - name: Publikacje
-#   link: /publications.html
+- name: Publikacje
+  link: /publications.html
 - name: Projekty
   link: /projects.html
 - name: O mnie
