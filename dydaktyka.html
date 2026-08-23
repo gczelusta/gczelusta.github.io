@@ -3,33 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Grzegorz Czelusta</title>
-  <meta name="description" content="Blog popularnonaukowy: artykuły, wideo, mini-kursy i interaktywne tutoriale o fizyce kwantowej." />
+  <title>Dydaktyka — Grzegorz Czelusta</title>
+  <meta name="description" content="Zajęcia prowadzone na Uniwersytecie Jagiellońskim oraz materiały do pobrania." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body data-page="blog">
+<body data-page="dydaktyka">
   <div class="shell">
     <nav data-nav></nav>
     <header class="hero page tight" data-hero></header>
-    <nav class="tabs filters" data-filtry></nav>
-    <section class="posts" data-posts></section>
-    <div class="empty" data-empty style="display:none" data-i="brak"></div>
+
+    <nav class="tabs" data-tabs></nav>
+
+    <section class="section" id="kursy" data-kursy></section>
+    <section class="section gap" id="materialy" data-materialy></section>
+    <section class="section gap" id="prace" data-prace style="padding-bottom:20px"></section>
+    <div class="section" data-pusto></div>
+
     <footer data-footer data-tall></footer>
   </div>
 
   <script src="dane/profil.js"></script>
-  <script src="dane/wpisy.js"></script>
+  <script src="dane/dydaktyka.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/wspolne.js"></script>
-  <script src="assets/js/strona-blog.js"></script>
-  <script>
-    I18N.onChange(function () {
-      var e = document.querySelector("[data-empty]");
-      if (e) e.textContent = I18N.t(I18N.UI.brakWpisow);
-    });
-  </script>
+  <script src="assets/js/strona-dydaktyka.js"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+---
+title: Blog
+---
+
+<div class="gallery">
+    {% for post in site.blog %}
+    <div class="gallery-item">
+        <a href="{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+            <img src="assets/images/blog/{{ post.name }}.png" alt="">
+            <div class="level">
+                Poziom:
+                {% for i in (0..post.level) %}
+                    &#9679;
+                {% endfor %}
+                {% for i in (post.level..1) %}
+                    &#9675;
+                {% endfor %}
+            </div>            
+            <p>{{ post.excerpt | markdownify }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>

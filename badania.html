@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Badania — Grzegorz Czelusta</title>
+  <meta name="description" content="Projekty badawcze, publikacje i nagrania wykładów online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="badania">
+  <div class="shell">
+    <nav data-nav></nav>
+    <header class="hero page tight" data-hero></header>
+
+    <nav class="tabs">
+      <a class="tab" href="#projekty" data-i="projekty">Projekty</a>
+      <a class="tab" href="#publikacje" data-i="publikacje">Publikacje</a>
+      <a class="tab" href="#wyklady" data-i="wyklady">Wykłady online</a>
+    </nav>
+
+    <section class="section" id="projekty" data-projekty></section>
+    <section class="section gap" id="publikacje" data-publikacje></section>
+    <section class="section gap" id="wyklady" data-wyklady style="padding-bottom:20px"></section>
+
+    <footer data-footer data-tall></footer>
+  </div>
+
+  <script src="dane/profil.js"></script>
+  <script src="dane/badania.js"></script>
+  <script src="dane/wpisy.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/wspolne.js"></script>
+  <script src="assets/js/strona-badania.js"></script>
+  <!-- tłumaczenie etykiet zakładek -->
+  <script>
+    I18N.onChange(function () {
+      var map = { projekty: I18N.UI.projekty, publikacje: I18N.UI.publikacje, wyklady: I18N.UI.wykladyOnline };
+      document.querySelectorAll(".tabs [data-i]").forEach(function (a) {
+        a.textContent = I18N.t(map[a.getAttribute("data-i")]);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,44 +1,31 @@
----
-layout: default
-title: Strona główna
----
-<div class="articles-featured">
-    <div class="article-main check">
-        {% assign main = site.blog | where: 'name', 'lqg' | first %}
-        <a href="{{ main.url }}">
-            <h2 class="article-title">{{ main.title }}</h2>
-            <img src="assets/images/blog/{{ main.name }}.png" alt="">
-            <p>{{ main.excerpt | markdownify }}</p>
-        </a>
-    </div>
-    
-    {% assign aside = site.blog | where: 'name', 'qc' | first %}
-    <div class="article-aside check">
-        <a href="{{ aside.url }}">
-            <h3 class="article-aside-title">{{ aside.title }}</h3>
-            <img src="assets/images/blog/{{ aside.name }}.png" alt="">
-        </a>
-    </div>
-    {% assign aside = site.blog | where: 'name', 'more_dimensions' | first %}
-    <div class="article-aside check">
-        <a href="{{ aside.url }}">
-            <h3 class="article-aside-title">{{ aside.title }}</h3>
-            <img src="assets/images/blog/{{ aside.name }}.png" alt="">
-        </a>
-    </div>
-    {% assign aside = site.tutorials | where: 'name', 'crypto' | first %}
-    <div class="article-aside check">
-        <a href="{{ aside.url }}">
-            <h3 class="article-aside-title">{{ aside.title }}</h3>
-            <img src="assets/images/tutorials/{{ aside.name }}.png" alt="">
-        </a>
-    </div>
-</div>
-<p>Jest to strona poświęcona fizyce. Próbująca pokazać, że choć fizyka opisuje złożony świat to wbrew pozorom potrafi być prosta.</p>
-<!-- <p>W zakładce Blog będą pojawiać się popularnonaukowe teksty oraz nieco bardziej subiektywne komentarze do zagadnień, zarówno z fizyki, jak i luźno z nią powiązanych.</p>
-<p>W zakładce Notatki będą poruszane mniej popularnonaukowe tematy, bez szczegółowego wyjaśniania wszystkich poruszonych zagadnień. Będą one wymagać pewnej wstępnej wiedzy z fizyki lub matematyki</p>
-<p>Zakładka Tutoriale będzie zawierać mini kursy pozwalające krok po kroku zapoznać się z jakimś zagadnieniem. Będą tam również zadania i ćwiczenia do wykonania pozwalające lepiej zrozumieć poruszany temat i sprawdzić się. Niektóre z tutoriali mogą wymagać jakichś wstępnych umiejętności czy to z matematyki czy z informatyki.</p>
-<p>Ostatnia zakładka Publikacje będzie zawierać popularnonaukowe opisy publikacji naukowych wraz z odnośnikami do oryginalej treści publikacji.</p> -->
-<p>Wszystkie artykuły mają oznaczenie poziomu trudności. Jedna kropka <span style="color: rgb(50, 91, 205)">&#9679;&#9675;&#9675;</span> oznacza, że do zrozumienia danej treści nie jest wymagana żadna specjalistyczna wiedza, czyli wystarczy wiedza na poziomie licealnym. Dwie kropki <span style="color: rgb(50, 91, 205)">&#9679;&#9679;&#9675;</span> oznaczają, że potrzebna jest wiedza z fizyki, matematyki czy informatyki na poziomie pierwszego roku studiów kierunku ścisłego lub technicznego. Trzy kropki <span style="color: rgb(50, 91, 205)">&#9679;&#9679;&#9679;</span> oznaczają, że potrzebna jest znajomość zagadnień bardziej specjalistycznych, czyli na poziomie wyższych lat studiów takich jak fizyka czy matematyka.</p>
-<p>Wiele artykułów zawiera również sekcję z listą innych artykułów ze strony, które warto najpierw przeczytać oraz sekcję z artykułami pogłębiającymi dany temat.</p>
-<p>Ilustracje na miniaturkach większości artykułów są obrazkami wygenerowanymi przez Sora.</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grzegorz Czelusta — fizyk · UJ</title>
+  <meta name="description" content="Strona osobista fizyka — kwantowa grawitacja, obliczenia i symulacje kwantowe oraz blog popularnonaukowy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="domowa">
+  <div class="shell">
+    <nav data-nav></nav>
+    <header class="hero" data-hero></header>
+    <section class="feeds">
+      <div class="feed left" data-feed-research></div>
+      <div class="feed right" data-feed-blog></div>
+    </section>
+    <footer data-footer></footer>
+  </div>
+
+  <script src="dane/profil.js"></script>
+  <script src="dane/badania.js"></script>
+  <script src="dane/wpisy.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/wspolne.js"></script>
+  <script src="assets/js/strona-glowna.js"></script>
+</body>
+</html>
