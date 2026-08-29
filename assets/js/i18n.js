@@ -12,6 +12,7 @@ window.I18N = (function () {
   // Statyczne napisy interfejsu (nie pochodzące z danych)
   var UI = {
     nav: {
+      domowa:     { pl: "start",       en: "home" },
       badania:    { pl: "badania",     en: "research" },
       blog:       { pl: "blog",        en: "blog" },
       dydaktyka:  { pl: "dydaktyka",   en: "teaching" },

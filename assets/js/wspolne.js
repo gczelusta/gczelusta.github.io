@@ -24,7 +24,8 @@
     var P = window.PROFIL;
 
     function navLink(key, href) {
-      var active = (key === "badania" && (page === "badania")) ||
+      var active = (key === "domowa" && (page === "domowa")) ||
+                   (key === "badania" && (page === "badania")) ||
                    (key === "blog" && (page === "blog" || page === "wpis")) ||
                    (key === "dydaktyka" && (page === "dydaktyka")) ||
                    (key === "wystapienia" && (page === "wystapienia"));
@@ -39,6 +40,7 @@
         '<span class="name">' + P.nazwiskoPelne + "</span>" +
       "</a>" +
       '<div class="nav-links">' +
+        navLink("domowa", "index.html") +
         navLink("badania", "badania.html") +
         navLink("blog", "blog.html") +
         navLink("dydaktyka", "dydaktyka.html") +
