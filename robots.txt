@@ -1,0 +1,10 @@
+# Zasady dla robotów wyszukiwarek. Cała strona jest otwarta.
+# Po przeniesieniu strony pod inny adres popraw też ostatnią linijkę.
+
+User-agent: *
+Allow: /
+
+# źródło obrazka podglądu — nie jest podstroną serwisu
+Disallow: /assets/og.html
+
+Sitemap: https://gczelusta.github.io/sitemap.xml

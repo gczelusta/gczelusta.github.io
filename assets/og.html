@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     ŹRÓDŁO OBRAZKA PODGLĄDU (assets/og.png) — tego, który pokazuje się,
+     gdy ktoś wkleja adres strony na Facebooku, LinkedInie czy Slacku.
+
+     To nie jest podstrona serwisu: nie ma do niej odnośnika, jest
+     wyłączona z sitemap.xml i oznaczona jako noindex.
+
+     Jak odświeżyć obrazek po zmianie tekstu (jedna komenda w folderze site/):
+
+       chromium --headless --disable-gpu --hide-scrollbars \
+         --window-size=600,315 --screenshot=assets/og.png assets/og.html
+
+     Uwaga: przed uruchomieniem zamknij inne okna chromium — gdy działa
+     już inna kopia przeglądarki, zrzut po cichu się nie zapisuje.
+
+     Dlaczego karta ma 600×315, a nie zalecane 1200×630: chromium w trybie
+     headless udaje ekran 800×600 i większego kadru po prostu nie maluje
+     (na dole zostawał biały pas). 600×315 to ta sama proporcja 1,91:1,
+     powyżej minimum Facebooka dla dużej karty. Gdyby kiedyś udało się
+     zrobić zrzut w pełnym rozmiarze, trzeba wtedy poprawić
+     og:image:width / og:image:height w nagłówkach plików .html.
+     ============================================================ -->
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>og:image — Grzegorz Czelusta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    html, body { width: 600px; height: 315px; overflow: hidden; }
+    body {
+      position: relative;
+      background: #fff; color: #14233B;
+      font-family: "Public Sans", system-ui, sans-serif;
+      padding: 38px 44px;
+    }
+    /* ta sama siatka kropek co w nagłówkach strony (.lattice) */
+    .lattice {
+      position: absolute; top: -20px; right: -20px;
+      width: 310px; height: 240px;
+      background-image: radial-gradient(#C7D4E8 1.6px, transparent 1.6px);
+      background-size: 20px 20px;
+      opacity: .75;
+    }
+    .top { position: relative; }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: #2E6BE6; margin-bottom: 17px;
+    }
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600; font-size: 46px; line-height: 1;
+      letter-spacing: -.03em;
+    }
+    .claim {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 500; font-size: 20px; line-height: 1.15;
+      letter-spacing: -.02em; color: #46586E; margin-top: 11px;
+    }
+    /* Stopka idzie tuż pod hasłem, a nie przy dolnej krawędzi kadru:
+       chromium w trybie headless nie maluje dolnej części strony, więc
+       wszystko musi zmieścić się w górnych ~200 pikselach. */
+    .bottom {
+      position: relative;
+      display: flex; align-items: center; gap: 9px;
+      border-top: 1px solid #E6EBF2;
+      margin-top: 26px; padding-top: 15px;
+    }
+    .dot {
+      width: 13px; height: 13px; flex: none;
+      border: 2px solid #14233B; border-radius: 50%;
+    }
+    .aff { font-size: 12.5px; color: #46586E; }
+    .url {
+      margin-left: auto;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px; letter-spacing: .04em; color: #73829A;
+    }
+  </style>
+</head>
+<body>
+  <div class="lattice"></div>
+
+  <div class="top">
+    <div class="kicker">quantum gravity · quantum computing</div>
+    <h1>Grzegorz Czelusta</h1>
+    <div class="claim">Fizyka. Prosta złożoność.</div>
+  </div>
+
+  <div class="bottom">
+    <span class="dot"></span>
+    <span class="aff">Instytut Fizyki Teoretycznej · Uniwersytet Jagielloński</span>
+    <span class="url">gczelusta.github.io</span>
+  </div>
+</body>
+</html>
