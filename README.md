@@ -16,11 +16,18 @@ site/
 ├── badania.html            ← Badania (projekty / publikacje / wykłady)
 ├── blog.html               ← Blog (z filtrowaniem po typie)
 ├── wpis.html               ← widok pojedynczego wpisu
+├── dydaktyka.html          ← Dydaktyka (zajęcia, materiały, prace)
+├── wystapienia.html        ← Wystąpienia (referaty i nagrania)
+│
+├── robots.txt              ← zasady dla wyszukiwarek
+├── sitemap.xml             ← mapa strony  (✏️ dopisz tu nowy wpis, p. 6)
 │
 ├── dane/                   ←  ✏️  TU EDYTUJESZ TREŚĆ
 │   ├── profil.js           ← imię, afiliacja, tekst powitalny, linki
 │   ├── badania.js          ← projekty, publikacje, wykłady online
-│   └── wpisy.js            ← lista wpisów bloga (manifest)
+│   ├── wpisy.js            ← lista wpisów bloga (manifest)
+│   ├── dydaktyka.js        ← zajęcia, materiały, tematy prac
+│   └── wystapienia.js      ← wygłoszone referaty
 │
 ├── wpisy/                  ←  ✏️  TU PISZESZ WPISY (pliki Markdown)
 │   ├── czy-czas-naprawde-plynie.pl.md
@@ -29,7 +36,10 @@ site/
 │
 └── assets/                 ← wygląd i logika (zwykle bez zmian)
     ├── css/style.css
-    └── js/...
+    ├── js/...
+    ├── favicon.svg         ← ikona w karcie przeglądarki
+    ├── og.png              ← obrazek podglądu przy udostępnianiu linku
+    └── og.html             ← źródło tego obrazka
 ```
 
 Strona jest **dwujęzyczna (PL/EN)**. Przełącznik języka jest w prawym górnym rogu.
@@ -133,3 +143,40 @@ a wpisy wczytują się poprawnie. Na GitHub Pages działa to bez żadnych dodatk
 > Jeśli wolisz trzymać stronę w podfolderze `docs/`, zmień w punkcie 3 folder na `/docs`
 > i umieść tam pliki. Plik `.nojekyll` (już dołączony) sprawia, że GitHub serwuje pliki
 > bez przetwarzania — zostaw go na miejscu.
+
+---
+
+## 6. Widoczność w Google (SEO)
+
+Strona jest przygotowana pod wyszukiwarki — w codziennej pracy **nie musisz tu nic robić**,
+poza dwoma wyjątkami opisanymi niżej.
+
+Co już działa:
+
+* każda podstrona ma własny tytuł, opis i adres kanoniczny,
+* przy wklejaniu linku (Facebook, LinkedIn, Slack, X) pokazuje się grafika `assets/og.png`,
+* `robots.txt` i `sitemap.xml` mówią wyszukiwarkom, co indeksować,
+* dane o autorze (afiliacja, ORCID, Scholar, GitHub, YouTube) trafiają do Google
+  automatycznie z `dane/profil.js` — wystarczy, że są tam aktualne.
+
+**Wyjątek 1: nowy wpis na bloga.** Poza `dane/wpisy.js` dopisz go jeszcze do
+`sitemap.xml` — jeden blok, na wzór tych, które już tam są:
+
+```xml
+<url>
+  <loc>https://gczelusta.github.io/wpis.html?w=TWOJ-SLUG</loc>
+  <lastmod>2026-07-01</lastmod>
+</url>
+```
+
+**Wyjątek 2: zmiana adresu strony.** Jeśli strona przeniesie się pod inny adres
+(np. własną domenę), popraw go w czterech miejscach: w nagłówkach plików `.html`
+(`canonical` i `og:url`), w polu `adres` w `dane/profil.js`, w `robots.txt`
+oraz w `sitemap.xml`.
+
+Po pierwszej publikacji warto raz zgłosić stronę w
+[Google Search Console](https://search.google.com/search-console) i wskazać tam
+adres mapy: `https://gczelusta.github.io/sitemap.xml`.
+
+Grafikę podglądu (`assets/og.png`) da się odświeżyć po zmianie tekstu — jej źródłem
+jest `assets/og.html`, a instrukcja jest w komentarzu na górze tego pliku.

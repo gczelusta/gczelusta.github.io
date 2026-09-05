@@ -9,6 +9,12 @@ window.PROFIL = {
   nazwiskoKrotkie: "G. Czelusta",
   nazwiskoPelne: "Grzegorz Czelusta",
 
+  /* Adres, pod którym strona stoi w sieci — ze slashem na końcu.
+     Używany do budowania adresów wpisów dla wyszukiwarek (strona-wpis.js).
+     Po przeniesieniu strony pod inny adres zmień go TU, a dodatkowo w
+     nagłówkach plików .html (canonical / og:url), w robots.txt i sitemap.xml. */
+  adres: "https://gczelusta.github.io/",
+
   afiliacja: {
     pl: "Instytut Fizyki Teoretycznej · Uniwersytet Jagielloński",
     en: "Institute of Theoretical Physics · Jagiellonian University"

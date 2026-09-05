@@ -24,7 +24,8 @@
     var P = window.PROFIL;
 
     function navLink(key, href) {
-      var active = (key === "badania" && (page === "badania")) ||
+      var active = (key === "domowa" && (page === "domowa")) ||
+                   (key === "badania" && (page === "badania")) ||
                    (key === "blog" && (page === "blog" || page === "wpis")) ||
                    (key === "dydaktyka" && (page === "dydaktyka")) ||
                    (key === "wystapienia" && (page === "wystapienia"));
@@ -39,6 +40,7 @@
         '<span class="name">' + P.nazwiskoPelne + "</span>" +
       "</a>" +
       '<div class="nav-links">' +
+        navLink("domowa", "index.html") +
         navLink("badania", "badania.html") +
         navLink("blog", "blog.html") +
         navLink("dydaktyka", "dydaktyka.html") +
@@ -67,7 +69,58 @@
       '<span class="footer-links">' + links + "</span>";
   }
 
-  function renderChrome() { renderNav(); renderFooter(); }
+  /* ---- Dane strukturalne (schema.org) ----
+     Wizytówka autora w formacie, który rozumieją wyszukiwarki — dzięki niej
+     Google może pokazać powiązanie z UJ, ORCID-em i kanałem YouTube.
+     Budujemy ją z dane/profil.js, żeby nazwisko, afiliacja i linki
+     pozostały opisane w jednym miejscu. Pojedynczy wpis bloga dokłada
+     do tego własny znacznik (patrz strona-wpis.js). */
+  function renderDaneStrukturalne() {
+    var P = window.PROFIL;
+    if (!P || !P.adres) return;
+    var baza = P.adres;
+
+    var el = document.getElementById("ld-profil");
+    if (!el) {
+      el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.id = "ld-profil";
+      document.head.appendChild(el);
+    }
+
+    var orcid = (P.linki || []).filter(function (l) {
+      return l.etykieta === "orcid";
+    })[0];
+
+    el.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": baza + "#osoba",
+          name: P.nazwiskoPelne,
+          url: baza,
+          jobTitle: I18N.t({ pl: "Badacz", en: "Researcher" }),
+          affiliation: { "@type": "CollegeOrUniversity", name: I18N.t(P.afiliacja) },
+          knowsAbout: (P.tagi || []).map(function (t) { return I18N.t(t); }),
+          sameAs: (P.linki || []).map(function (l) { return l.url; }),
+          identifier: orcid
+            ? { "@type": "PropertyValue", propertyID: "ORCID", value: orcid.url }
+            : undefined
+        },
+        {
+          "@type": "WebSite",
+          "@id": baza + "#strona",
+          url: baza,
+          name: P.nazwiskoPelne,
+          inLanguage: I18N.lang === "pl" ? "pl-PL" : "en",
+          publisher: { "@id": baza + "#osoba" }
+        }
+      ]
+    });
+  }
+
+  function renderChrome() { renderNav(); renderFooter(); renderDaneStrukturalne(); }
 
   I18N.onChange(renderChrome);
   document.addEventListener("DOMContentLoaded", function () {

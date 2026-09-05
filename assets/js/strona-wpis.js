@@ -21,6 +21,100 @@
   }
 
   /* ------------------------------------------------------------
+     METADANE DLA WYSZUKIWAREK.
+     Wszystkie wpisy dzielą jeden plik wpis.html, więc tytuł, opis
+     i adres kanoniczny trzeba ustawić dopiero po odczytaniu ?w=slug.
+     Google renderuje JavaScript i te znaczniki widzi. Roboty
+     Facebooka i LinkedIna — nie; przy udostępnianiu linku do wpisu
+     pokaże się ogólny opis wpisany na sztywno w <head> wpis.html.
+     ------------------------------------------------------------ */
+  function ustawMeta(klucz, nazwa, tresc) {
+    var el = document.head.querySelector("meta[" + klucz + '="' + nazwa + '"]');
+    if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute(klucz, nazwa);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", tresc);
+  }
+
+  function ustawKanoniczny(href) {
+    var el = document.head.querySelector('link[rel="canonical"]');
+    if (!el) {
+      el = document.createElement("link");
+      el.setAttribute("rel", "canonical");
+      document.head.appendChild(el);
+    }
+    el.setAttribute("href", href);
+  }
+
+  // dane strukturalne (schema.org) — pozwalają pokazać datę i autora w wynikach
+  function ustawDaneStrukturalne(dane) {
+    var el = document.getElementById("ld-wpis");
+    if (!el) {
+      el = document.createElement("script");
+      el.type = "application/ld+json";
+      el.id = "ld-wpis";
+      document.head.appendChild(el);
+    }
+    el.textContent = dane ? JSON.stringify(dane) : "";
+  }
+
+  /* Google pokazuje w wynikach jakieś 160 znaków opisu — lepiej uciąć
+     samemu, po całym słowie, niż dać wyszukiwarce urwać w połowie. */
+  function skroc(txt, ile) {
+    txt = (txt || "").replace(/\s+/g, " ").trim();
+    if (txt.length <= ile) return txt;
+    var ciety = txt.slice(0, ile);
+    var spacja = ciety.lastIndexOf(" ");
+    if (spacja > ile * 0.6) ciety = ciety.slice(0, spacja);
+    return ciety.replace(/[\s.,;:–—-]+$/, "") + "…";
+  }
+
+  function metadaneWpisu(post) {
+    var P = window.PROFIL;
+    var baza = P.adres || "";
+    var adres = baza + "wpis.html?w=" + post.slug;
+    var tytul = I18N.t(post.tytul);
+    var opis = I18N.t(post.opis);
+    var opisKrotki = skroc(opis, 160);
+
+    document.title = tytul + " · " + P.nazwiskoPelne;
+    ustawMeta("name", "description", opisKrotki);
+    ustawMeta("name", "robots", "index, follow, max-image-preview:large");
+    ustawMeta("property", "og:type", "article");
+    ustawMeta("property", "og:title", tytul);
+    ustawMeta("property", "og:description", opisKrotki);
+    ustawMeta("property", "og:url", adres);
+    ustawMeta("property", "og:locale", I18N.lang === "pl" ? "pl_PL" : "en_GB");
+    ustawMeta("property", "article:published_time", post.data || "");
+    ustawMeta("property", "article:author", P.nazwiskoPelne);
+    ustawKanoniczny(adres);
+
+    ustawDaneStrukturalne({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: tytul,
+      description: opis,
+      datePublished: post.data,
+      inLanguage: I18N.lang === "pl" ? "pl-PL" : "en",
+      url: adres,
+      mainEntityOfPage: adres,
+      image: baza + "assets/og.png",
+      author: { "@type": "Person", name: P.nazwiskoPelne, url: baza },
+      publisher: { "@type": "Person", name: P.nazwiskoPelne, url: baza }
+    });
+  }
+
+  // zły slug → strona bez treści; nie chcemy jej w wynikach wyszukiwania
+  function metadaneBraku() {
+    document.title = (I18N.lang === "pl" ? "Nie znaleziono wpisu" : "Post not found") +
+      " · " + window.PROFIL.nazwiskoPelne;
+    ustawMeta("name", "robots", "noindex, follow");
+    ustawDaneStrukturalne(null);
+  }
+
+  /* ------------------------------------------------------------
      Markdown + LaTeX.
      Wzory WYCINAMY PRZED parsowaniem Markdownu i podmieniamy na
      znaczniki @@WZOR0@@ — inaczej marked potraktowałby np. _ albo *
@@ -65,6 +159,7 @@
     document.querySelector("[data-empty]").style.display = "none";
 
     if (!post) {
+      metadaneBraku();
       host.innerHTML =
         '<a class="back" href="blog.html">' + I18N.t(U.powrot) + "</a>" +
         "<h1>" + (I18N.lang === "pl" ? "Nie znaleziono wpisu" : "Post not found") + "</h1>" +
@@ -74,7 +169,7 @@
       return;
     }
 
-    document.title = I18N.t(post.tytul) + " · " + window.PROFIL.nazwiskoPelne;
+    metadaneWpisu(post);
 
     var typLabel = I18N.t(U.typEtykieta[post.typ]);
     var cls = { artykul: "outline", tutorial: "blue", "mini-kurs": "teal", wideo: "blue" }[post.typ] || "outline";

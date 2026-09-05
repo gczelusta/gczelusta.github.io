@@ -55,6 +55,22 @@ img { max-width: 100%; display: block; }
   min-height: 100vh;
 }
 
+/* ---- Zaplecze bez JavaScriptu ----
+   Cała treść buduje się w przeglądarce, więc przy wyłączonym JS — i dla
+   robotów, które skryptów nie uruchamiają — zostaje statyczny opis strony
+   z odnośnikami do podstron (blok <noscript> w każdym pliku .html). */
+.noscript {
+  padding: 40px 48px;
+  border-bottom: 1px solid var(--line);
+}
+.noscript h1 {
+  font-family: var(--display);
+  font-weight: 600; font-size: 30px; letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.noscript p { color: var(--text); line-height: 1.6; margin: 0 0 10px; max-width: 620px; }
+.noscript a { color: var(--blue); text-decoration: underline; }
+
 /* ---- Navigation ---- */
 .nav {
   display: flex;
