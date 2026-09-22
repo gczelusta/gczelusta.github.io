@@ -38,6 +38,18 @@
     el.setAttribute("content", tresc);
   }
 
+  function usunMeta(klucz, nazwa) {
+    var el = document.head.querySelector("meta[" + klucz + '="' + nazwa + '"]');
+    if (el) el.parentNode.removeChild(el);
+  }
+
+  // okładka wpisu jako pełny adres (roboty nie rozwiążą ścieżki względnej)
+  function obrazekWpisu(post, baza) {
+    var o = window.__adresOkladki(post);
+    if (!o) return "";
+    return /^https?:\/\//.test(o) ? o : baza + o;
+  }
+
   function ustawKanoniczny(href) {
     var el = document.head.querySelector('link[rel="canonical"]');
     if (!el) {
@@ -91,6 +103,20 @@
     ustawMeta("property", "article:author", P.nazwiskoPelne);
     ustawKanoniczny(adres);
 
+    /* Obrazek podglądu: okładka wpisu, a bez niej wspólna karta strony.
+       Rozmiar znamy tylko dla karty (600×315) — przy okładce usuwamy
+       width/height, bo nieprawdziwe wymiary psują podgląd. */
+    var obrazek = obrazekWpisu(post, baza);
+    ustawMeta("property", "og:image", obrazek || baza + "assets/og.png");
+    if (obrazek) {
+      usunMeta("property", "og:image:width");
+      usunMeta("property", "og:image:height");
+      ustawMeta("property", "og:image:alt", tytul);
+    } else {
+      ustawMeta("property", "og:image:width", "600");
+      ustawMeta("property", "og:image:height", "315");
+    }
+
     ustawDaneStrukturalne({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -100,7 +126,7 @@
       inLanguage: I18N.lang === "pl" ? "pl-PL" : "en",
       url: adres,
       mainEntityOfPage: adres,
-      image: baza + "assets/og.png",
+      image: obrazek || baza + "assets/og.png",
       author: { "@type": "Person", name: P.nazwiskoPelne, url: baza },
       publisher: { "@type": "Person", name: P.nazwiskoPelne, url: baza }
     });

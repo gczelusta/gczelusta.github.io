@@ -46,14 +46,22 @@
 
   function postCard(w) {
     var typLabel = I18N.t(U.typEtykieta[w.typ]);
+    var czesci = w.typ === "mini-kurs" && w.kursCzesci
+      ? " · " + w.kursCzesci + (I18N.lang === "pl" ? " CZĘŚCI" : " PARTS") : "";
+    // okładka z pola  okladka  (a przy wideo — miniatura z YouTube) albo ""
+    var okladka = window.__okladkaWpisu(w);
     var thumb;
     if (w.typ === "wideo") {
-      // miniatura prosto z YouTube (pole wideoUrl); bez adresu zostaje siatka
-      thumb = '<div class="pthumb dark center">' + window.__okladkaYT(w.wideoUrl) +
+      // bez okładki i bez adresu filmu zostaje siatka
+      thumb = '<div class="pthumb dark center">' + (okladka || '<div class="grid"></div>') +
         '<span class="play"></span>' +
         '<span class="tag blue lg pbadge" style="position:absolute;left:12px;top:12px">' + typLabel + "</span></div>";
+    } else if (okladka) {
+      // własna okładka zamiast deseniu; etykieta zostaje na obrazku
+      var kolor = { "mini-kurs": "teal", tutorial: "blue" }[w.typ] || "solid";
+      thumb = '<div class="pthumb dark">' + okladka +
+        '<span class="tag ' + kolor + ' lg pbadge">' + typLabel + czesci + "</span></div>";
     } else if (w.typ === "mini-kurs") {
-      var czesci = w.kursCzesci ? " · " + w.kursCzesci + (I18N.lang === "pl" ? " CZĘŚCI" : " PARTS") : "";
       thumb = '<div class="pthumb teal"><span class="tag teal lg pbadge">' + typLabel + czesci + "</span></div>";
     } else if (w.typ === "tutorial") {
       thumb = '<div class="pthumb dots-blue"><span class="tag blue lg pbadge">' + typLabel + "</span></div>";
@@ -77,6 +85,9 @@
      grafika, a widget zostaje poza nimi. */
   function featuredCard(w) {
     var adresWpisu = "wpis.html?w=" + w.slug;
+    // prawa połowa: okładka, a bez niej siatka jak dotąd
+    var okladka = window.__okladkaWpisu(w);
+    var klasaPrawej = okladka ? "right" : "right grid-bg";
     var tresc =
       '<div class="tag-row" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px">' +
         '<span class="tag blue lg">' + I18N.t(U.typEtykieta[w.typ]) + "</span></div>" +
@@ -89,12 +100,12 @@
           '<a class="feat-txt" href="' + adresWpisu + '">' + tresc + "</a>" +
           "<div data-widget-slot></div>" +
         "</div>" +
-        '<a class="right grid-bg" href="' + adresWpisu + '"></a>' +
+        '<a class="' + klasaPrawej + '" href="' + adresWpisu + '">' + okladka + "</a>" +
       "</div></div>";
     }
     return '<a class="post-card featured t-' + w.typ + '" data-type="' + w.typ + '" href="' + adresWpisu + '">' +
       '<div class="split"><div class="left">' + tresc + "</div>" +
-      '<div class="right grid-bg"></div>' +
+      '<div class="' + klasaPrawej + '">' + okladka + "</div>" +
       "</div></a>";
   }
 
