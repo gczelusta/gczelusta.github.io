@@ -128,7 +128,7 @@
     I18N.init();
   });
 
-  /* ---- Miniatury YouTube (używane na Badaniach i na Blogu) ---- */
+  /* ---- Miniatury YouTube i okładki wpisów (Badania, Blog, strona główna) ---- */
 
   /* ID filmu z adresu — obsługuje watch?v=…, youtu.be/…, /embed/…,
      /shorts/… oraz /live/…  (ID zawsze ma 11 znaków). */
@@ -151,8 +151,34 @@
            "onerror=\"this.onerror=null;this.src='" + baza + "hqdefault.jpg'\">";
   }
 
+  /* Adres okładki wpisu bloga (pole  okladka  w dane/wpisy.js) albo "".
+     "#" i pusty napis znaczą „brak" — jak wszędzie w danych. Wpis wideo
+     bez własnej okładki dostaje miniaturę z YouTube (pole wideoUrl). */
+  function adresOkladki(w) {
+    var o = w && w.okladka;
+    if (o && o !== "#") return o;
+    if (w && w.typ === "wideo" && youtubeId(w.wideoUrl)) {
+      return "https://img.youtube.com/vi/" + youtubeId(w.wideoUrl) + "/hqdefault.jpg";
+    }
+    return "";
+  }
+
+  /* Gotowy <img> okładki, wypełniający kadr (klasa .vshot), albo "".
+     Wideo bez okładki idzie przez okladkaYT, żeby zachować próbę
+     wersji maxresdefault z awaryjnym hqdefault. */
+  function okladkaWpisu(w) {
+    var o = w && w.okladka;
+    if (o && o !== "#") {
+      return '<img class="vshot" src="' + o + '" alt="" loading="lazy">';
+    }
+    if (w && w.typ === "wideo" && youtubeId(w.wideoUrl)) return okladkaYT(w.wideoUrl);
+    return "";
+  }
+
   // udostępnij pomocników innym skryptom
   window.__el = el;
   window.__youtubeId = youtubeId;
   window.__okladkaYT = okladkaYT;
+  window.__adresOkladki = adresOkladki;
+  window.__okladkaWpisu = okladkaWpisu;
 })();

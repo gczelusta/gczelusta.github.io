@@ -44,8 +44,21 @@ window.WPISY = [
   //            en: "From wavefunction to measurement, one evening at a time — with exercises." }
   // },
   {
+    slug: "olimpiada-kwantowa",
+    typ: "artykul",
+    okladka: "assets/images/blog/ok_logo_cropped.png",
+    wyrozniony: true,
+    data: "2026-09-22",
+    czas: { pl: "5 min", en: "5 min" },
+    tytul: { pl: "Olimpiada kwantowa",
+             en: "Quantum Olympiad" },
+    opis:  { pl: "Startuje pierwsza edycja Olimpiady Kwantowej oraz warsztaty przygotowujące do niej!",
+             en: "The first edition of the Quantum Olympiad is kicking off, along with preparatory workshops!" }
+  },
+  {
     slug: "extra-dimensions",
     typ: "artykul",
+    okladka: "assets/images/blog/compact_dimensions.png",
     wyrozniony: true,
     data: "2026-06-15",
     czas: { pl: "5 min", en: "5 min" },
